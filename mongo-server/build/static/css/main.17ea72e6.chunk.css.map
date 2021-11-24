@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/style.css"],"names":[],"mappings":"AAAA,yBACE,YACE,WACF,CACF","file":"main.17ea72e6.chunk.css","sourcesContent":["@media (max-width: 320px) {\r\n  .card-width {\r\n    width: \"90%\";\r\n  }\r\n}\r\n"]}
