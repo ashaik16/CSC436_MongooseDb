@@ -4,6 +4,7 @@ var Todo = require("../models/Todo");
 var jwt = require("jsonwebtoken");
 
 const privateKey = process.env.JWT_PRIVATE_KEY;
+
 router.use(function (req, res, next) {
   console.log(req.header("Authorization"));
   if (req.header("Authorization")) {
@@ -19,6 +20,7 @@ router.use(function (req, res, next) {
   }
   next();
 });
+
 router.get("/:todoId", async function (req, res, next) {
   const todo = await Todo.findOne()
     .where("_id")
@@ -27,6 +29,7 @@ router.get("/:todoId", async function (req, res, next) {
 
   return res.status(200).json(todo);
 });
+
 router.get("/", async function (req, res, next) {
   // res.render("index", { title: "Express" });
   const todoList = await Todo.find()

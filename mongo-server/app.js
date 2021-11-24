@@ -20,9 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
-app.use("/auth", authRouter);
-app.use("/todoList", todoRouter);
-app.use("/users", userRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/todoList", todoRouter);
+app.use("/api/users", userRouter);
 
 app.use(express.static(path.join(__dirname, "build")));
 
