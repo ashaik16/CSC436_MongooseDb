@@ -20,7 +20,7 @@ router.post("/login", async function (req, res, next) {
   if (req.body.username && req.body.password) {
     const user = await User.findOne()
       .where("username")
-      .equals(req.body.username)
+      .equals(req.body.username.toLowerCase())
       .exec();
 
     if (user) {
@@ -48,7 +48,7 @@ router.post("/register", function (req, res, next) {
   if (req.body.username && req.body.password && req.body.passwordConfirmation) {
     if (req.body.password === req.body.passwordConfirmation) {
       const user = new User({
-        username: req.body.username,
+        username: req.body.username.toLowerCase(),
         password: req.hashedPassword,
       });
       user
