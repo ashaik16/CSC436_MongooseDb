@@ -6,7 +6,6 @@ var jwt = require("jsonwebtoken");
 const privateKey = process.env.JWT_PRIVATE_KEY;
 
 router.use(function (req, res, next) {
-  console.log(req.header("Authorization"));
   if (req.header("Authorization")) {
     try {
       req.payload = jwt.verify(req.header("Authorization"), privateKey, {
